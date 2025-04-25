@@ -187,3 +187,4 @@ temp/
 *temp*.ipynb
 junk/
 test.ipynb
+data/raw/sales_data.csv
