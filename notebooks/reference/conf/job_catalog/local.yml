@@ -1,31 +1,40 @@
+# Modified conf/job_catalog/local.yml
 jobs:
   - name: data-cleaning
     stages:
         - name: 'clean-base-tables'
           tasks:
-            - name: 'product'
+            - name: 'theme_list'
               params: {}
-            - name: 'orders'
+            - name: 'theme_product_list'
               params: {}
-            
+            - name: 'product_manufacturer_list'
+              params: {}
+            - name: 'google_search_data'
+              params: {}
+            - name: 'sales_data'
+              params: {}
+            - name: 'social_media_data'
+              params: {}
+
         - name: 'clean-derivative-tables'
           tasks:
-            - name: 'sales'
+            - name: 'combined_data'
               params: {}
         - name: 'train-test-split'
           tasks:
             - name: 'train-test'
               params:
-                target: unit_price,
+                target: revenue
                 test_size: 0.2
-              
+
   - name: feat-engg
     stages:
         - name: 'feature-pipelines'
           tasks:
             - name: 'transform-features'
-              params: 
-                outliers: 
+              params:
+                outliers:
                   method: percentile
                   lb: 0.01
                   ub: 0.99

@@ -142,7 +142,7 @@ We need to specify the usecase to validate the environment for core as well as u
 
 - The `inv` command has a built-in help facility available for each of the invoke builtins. To use it, type `--help` followed by the command:
     ```
-    (ta-lib-dev):~/<proj-folder>$ inv launch.jupyterlab --help
+    (ta-lib-dev):~/<proj-folder>$ --help
     ```
 - On running the ``help`` command, you get to see the different options supported by it.
 

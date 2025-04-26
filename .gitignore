@@ -15,7 +15,6 @@
 **/_version.py
 
 # Ignore dataset and model folders
-data
 artifacts
 mlruns
 
@@ -188,3 +187,5 @@ temp/
 *temp*.ipynb
 junk/
 test.ipynb
+data/raw/sales_data.csv
+data/raw/sales_data.csv

@@ -85,11 +85,12 @@ def load_dataset(context, key, skip=False, **kwargs):
         raise ValueError(
             f"Invalid dataset key: {key}. \n\nAvailable datasets: {avlb_keys}"
         )
-
+    print(ds["uri"])
     load_params = ds.get("driver_params", {}).get("load", {})
     fs = io.fs(context, ds["uri"], ds.get("credential_id"))
 
     data_uri = fs.glob(ds["uri"])
+
     df = utils.load_data(data_uri[0], fs=fs, **load_params)
     cols = set(df.columns)
     for uri_ in data_uri[1:]:
